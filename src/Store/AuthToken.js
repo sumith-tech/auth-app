@@ -20,7 +20,6 @@ const AuthToken = (props) => {
   };
   return (
     <AuthContext.Provider value={authcontext}>
-      {console.log(authcontext.token)}
       {props.children}
     </AuthContext.Provider>
   );

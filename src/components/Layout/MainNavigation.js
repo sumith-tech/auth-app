@@ -7,7 +7,7 @@ const MainNavigation = () => {
   const authCtx = useContext(AuthContext);
 
   const isLoggedin = authCtx.islogin;
-
+  console.log(isLoggedin);
   const onlogoutHandler = () => {
     authCtx.logout();
   };
