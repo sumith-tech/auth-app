@@ -1,9 +1,13 @@
 import React, { useContext } from "react";
+import { useNavigate } from "react-router-dom";
 import { useRef } from "react";
 import classes from "./ProfileForm.module.css";
 import AuthContext from "../../Store/context-auth";
 const ProfileForm = () => {
   const newPassword = useRef();
+
+  const navigate = useNavigate();
+
   const authCtx = useContext(AuthContext);
   const onsubmitHandler = (event) => {
     event.preventDefault();
@@ -21,6 +25,7 @@ const ProfileForm = () => {
       }
     ).then((res) => {
       // always succed
+      navigate("/");
     });
   };
 

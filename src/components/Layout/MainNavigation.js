@@ -2,14 +2,16 @@ import { Link } from "react-router-dom";
 import React, { useContext } from "react";
 import AuthContext from "../../Store/context-auth";
 import classes from "./MainNavigation.module.css";
-
+import { useNavigate } from "react-router-dom";
 const MainNavigation = () => {
   const authCtx = useContext(AuthContext);
 
+  const navigate = useNavigate();
+
   const isLoggedin = authCtx.islogin;
-  console.log(isLoggedin);
   const onlogoutHandler = () => {
     authCtx.logout();
+    navigate('/')
   };
 
   return (
