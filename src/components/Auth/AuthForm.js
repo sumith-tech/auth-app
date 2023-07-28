@@ -53,6 +53,7 @@ const AuthForm = (props) => {
       .then((data) => {
         navigate("/");
         authctx.login(data.idToken);
+        
       })
       .catch((err) => {
         alert(err.message);
